@@ -10,8 +10,11 @@ class OnboardingScreen extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Center(child: Image.asset("assets/images/Savings.png")),
+          Image.asset("assets/images/Savings.png"),
           Container(
+            margin: EdgeInsets.all(20),
+            padding: EdgeInsets.only(right: 20, left: 20),
+            width: double.infinity,
             decoration: BoxDecoration(
                 color: Colors.red, borderRadius: BorderRadius.circular(16)),
             child: Column(
@@ -19,7 +22,12 @@ class OnboardingScreen extends StatelessWidget {
                 Text(
                   "Let's start the journey",
                   textAlign: TextAlign.center,
-                )
+                ),
+                Text(
+                  "Experience seamless digital transactions with JustDuit",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(color: Colors.grey),
+                ),
               ],
             ),
           )
