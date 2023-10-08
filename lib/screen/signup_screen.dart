@@ -17,7 +17,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   bool isNameValid = true;
   bool isEmailValid = true;
   bool isPassValid = true;
-  bool passNotMatch = false;
+  bool passMatch = true;
 
   @override
   Widget build(BuildContext context) {
@@ -187,7 +187,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12)),
                       errorText:
-                          passNotMatch ? "Confirm Password tidak sama" : null),
+                          passMatch ? null : "Confirm Password tidak sama"),
                 ),
                 SizedBox(
                   height: 12,
@@ -208,8 +208,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                       emailController.text.isNotEmpty;
                               isNameValid = nameController.text.isNotEmpty;
                               isPassValid = passController.text.isNotEmpty;
-                              passNotMatch =
-                                  passController.text != confController.text;
+                              passMatch =
+                                  passController.text == confController.text &&
+                                      confController.text.isNotEmpty;
                             });
                           },
                           child: Padding(

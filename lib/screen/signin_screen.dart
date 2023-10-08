@@ -22,8 +22,7 @@ class _SignInScreenState extends State<SignInScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-          child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
+          child: ListView(
         children: [
           Padding(
             padding: const EdgeInsets.only(top: 80),
