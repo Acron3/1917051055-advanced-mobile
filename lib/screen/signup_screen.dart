@@ -209,7 +209,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               isNameValid = nameController.text.isNotEmpty;
                               isPassValid = passController.text.isNotEmpty;
                               passNotMatch =
-                                  passController.text == confController.text;
+                                  passController.text != confController.text;
                             });
                           },
                           child: Padding(
