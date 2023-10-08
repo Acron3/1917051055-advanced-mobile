@@ -23,8 +23,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-          child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
+          child: ListView(
         children: [
           Padding(
             padding: const EdgeInsets.only(top: 80),
@@ -41,11 +40,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Text(
-                  "Hi, Welcome Back to Justduit",
-                  style: GoogleFonts.poppins(
-                    fontSize: 22,
-                    fontWeight: FontWeight.w700,
+                Expanded(
+                  child: Text(
+                    "Sign Up Now and Unlock the Power of Justduit",
+                    style: GoogleFonts.poppins(
+                      fontSize: 22,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
                 ),
               ],
@@ -187,21 +188,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           borderRadius: BorderRadius.circular(12)),
                       errorText:
                           passNotMatch ? "Confirm Password tidak sama" : null),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    TextButton(
-                      onPressed: () {},
-                      child: Text(
-                        "Forgot Password",
-                        style: GoogleFonts.poppins(
-                            color: Colors.blue,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600),
-                      ),
-                    ),
-                  ],
                 ),
                 SizedBox(
                   height: 12,
