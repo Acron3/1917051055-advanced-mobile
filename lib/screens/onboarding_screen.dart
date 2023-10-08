@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:justduit/screens/form_screen.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
@@ -50,7 +51,13 @@ class OnboardingScreen extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: ElevatedButton(
-                        onPressed: () {}, child: Text("Kunjungi")),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => FormScreen()));
+                        },
+                        child: Text("Kunjungi")),
                   ))
             ],
           ),
