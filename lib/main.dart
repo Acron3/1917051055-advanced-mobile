@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:justduit/screen/onboarding_screen.dart';
-import 'package:justduit/screen/signin_screen.dart';
+import 'package:justduit/screen/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,7 +20,7 @@ class MyApp extends StatelessWidget {
         textTheme: GoogleFonts.poppinsTextTheme(),
       ),
       debugShowCheckedModeBanner: false,
-      home: const SignInScreen(),
+      home: const HomeScreen(),
     );
   }
 }
