@@ -2,8 +2,15 @@ class PostModel {
   String? name;
   String? profilePhotoUrl;
   String? photoUrl;
+  bool isFavorite;
+  bool isBookmarked;
 
-  PostModel({this.name, this.profilePhotoUrl, this.photoUrl});
+  PostModel(
+      {this.name,
+      this.profilePhotoUrl,
+      this.photoUrl,
+      this.isFavorite = false,
+      this.isBookmarked = false});
 
   List<PostModel> getPostDummyData() {
     return [

@@ -99,4 +99,10 @@ class _loginScreenState extends State<loginScreen> {
       )),
     );
   }
+
+  @override
+  void dispose() {
+    phoneController.dispose();
+    super.dispose();
+  }
 }

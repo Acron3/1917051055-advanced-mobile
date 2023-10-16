@@ -10,6 +10,7 @@ class ListPostScreen extends StatefulWidget {
 
 class _ListPostScreenState extends State<ListPostScreen> {
   var post = PostModel().getPostDummyData();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,7 +39,7 @@ class _ListPostScreenState extends State<ListPostScreen> {
                         ),
                         Text(
                           post[index].name!,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.w700,
                           ),
@@ -57,15 +58,24 @@ class _ListPostScreenState extends State<ListPostScreen> {
                           children: [
                             IconButton(
                               icon: Icon(
-                                Icons.favorite_border,
+                                post[index].isFavorite
+                                    ? Icons.favorite
+                                    : Icons.favorite_border,
                                 size: 28,
-                                color: Colors.black,
+                                color: post[index].isFavorite
+                                    ? Colors.red
+                                    : Colors.black,
                                 weight: 100,
                               ),
-                              onPressed: () {},
+                              onPressed: () {
+                                setState(() {
+                                  post[index].isFavorite =
+                                      !post[index].isFavorite;
+                                });
+                              },
                             ),
                             IconButton(
-                              icon: Icon(
+                              icon: const Icon(
                                 Icons.chat_bubble_outline,
                                 size: 28,
                                 color: Colors.black,
@@ -73,7 +83,7 @@ class _ListPostScreenState extends State<ListPostScreen> {
                               onPressed: () {},
                             ),
                             IconButton(
-                              icon: Icon(
+                              icon: const Icon(
                                 Icons.send_outlined,
                                 size: 28,
                                 color: Colors.black,
@@ -84,11 +94,34 @@ class _ListPostScreenState extends State<ListPostScreen> {
                         ),
                         IconButton(
                           icon: Icon(
-                            Icons.bookmark_border,
+                            post[index].isBookmarked
+                                ? Icons.bookmark
+                                : Icons.bookmark_border,
                             size: 28,
-                            color: Colors.black,
+                            color: post[index].isBookmarked
+                                ? Colors.yellow
+                                : Colors.black,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            setState(() {
+                              post[index].isBookmarked =
+                                  !post[index].isBookmarked;
+                            });
+                            if (post[index].isBookmarked) {
+                              const snackbar = SnackBar(
+                                content: Text(
+                                  'Post Saved',
+                                  style: TextStyle(fontSize: 18),
+                                ),
+                                elevation: 10,
+                                duration: Duration(seconds: 1),
+                                behavior: SnackBarBehavior.floating,
+                                margin: EdgeInsets.all(5),
+                              );
+                              ScaffoldMessenger.of(context)
+                                  .showSnackBar(snackbar);
+                            }
+                          },
                         )
                       ],
                     )
