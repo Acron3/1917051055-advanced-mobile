@@ -37,7 +37,7 @@ class _loginScreenState extends State<loginScreen> {
                   children: [
                     Text(
                       "Phone Number",
-                      style: TextStyle(fontSize: 18),
+                      style: TextStyle(fontSize: 16, color: Colors.black),
                     ),
                     Text(
                       "*",
@@ -52,7 +52,11 @@ class _loginScreenState extends State<loginScreen> {
                   controller: phoneController,
                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(
-                      prefixIcon: Icon(Icons.phone),
+                      prefixIcon: Icon(
+                        Icons.phone,
+                        size: 30,
+                        color: Colors.black,
+                      ),
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12)),
                       errorText:

@@ -23,23 +23,74 @@ class _ListPostScreenState extends State<ListPostScreen> {
             itemCount: post.length,
             itemBuilder: (context, index) {
               return Container(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
+                child: Column(
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8),
-                      child: CircleAvatar(
-                        radius: 25,
-                        backgroundImage:
-                            NetworkImage(post[index].profilePhotoUrl!),
-                      ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8),
+                          child: CircleAvatar(
+                            radius: 25,
+                            backgroundImage:
+                                NetworkImage(post[index].profilePhotoUrl!),
+                          ),
+                        ),
+                        Text(
+                          post[index].name!,
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        )
+                      ],
                     ),
-                    Text(
-                      post[index].name!,
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    SizedBox(
+                      width: double.infinity,
+                      child: Image.network(post[index].photoUrl!),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            IconButton(
+                              icon: Icon(
+                                Icons.favorite_border,
+                                size: 28,
+                                color: Colors.black,
+                                weight: 100,
+                              ),
+                              onPressed: () {},
+                            ),
+                            IconButton(
+                              icon: Icon(
+                                Icons.chat_bubble_outline,
+                                size: 28,
+                                color: Colors.black,
+                              ),
+                              onPressed: () {},
+                            ),
+                            IconButton(
+                              icon: Icon(
+                                Icons.send_outlined,
+                                size: 28,
+                                color: Colors.black,
+                              ),
+                              onPressed: () {},
+                            )
+                          ],
+                        ),
+                        IconButton(
+                          icon: Icon(
+                            Icons.bookmark_border,
+                            size: 28,
+                            color: Colors.black,
+                          ),
+                          onPressed: () {},
+                        )
+                      ],
                     )
                   ],
                 ),

@@ -75,10 +75,10 @@ flutter:
   fonts:
     - family: PlusJakartaSans
       fonts:
-        - asset: fonts/PlusJakartaSans-Regular.ttf
-        - asset: fonts/PlusJakartaSans-Italic.ttf
+        - asset: assets/fonts/PlusJakartaSans-Regular.ttf
+        - asset: assets/fonts/PlusJakartaSans-Italic.ttf
           style: italic
-        - asset: fonts/PlusJakartaSans-Bold.ttf
+        - asset: assets/fonts/PlusJakartaSans-Bold.ttf
           weight: 700
   #   - family: Trajan Pro
   #     fonts:
